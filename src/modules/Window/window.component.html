@@ -1,0 +1,16 @@
+<div class="window active" style="width: 50vw" #windowDiv>
+    <div class="title-bar" style="cursor: pointer;" (mousedown)="onTitleBarMouseDown($event)">
+        <div class="title-bar-text">{{ titleBarText }}</div>
+        <div class="title-bar-controls">
+            <button aria-label="Minimize"></button>
+            <button aria-label="Maximize"></button>
+            <button aria-label="Close"></button>
+        </div>
+    </div>
+    <div class="window-body has-space" style="height: 30vh">
+        <p>You will be granted access after agreeing to all the Terms of Service.</p>
+  
+        <button class="default">OK</button>
+        <button>Cancel</button>   
+    </div>
+</div>
