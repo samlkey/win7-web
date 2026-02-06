@@ -1,0 +1,5 @@
+.context-menu {
+    position: fixed;
+    font-size: 12px;
+    cursor: pointer;
+}

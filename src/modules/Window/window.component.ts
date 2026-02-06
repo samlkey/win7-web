@@ -1,25 +1,38 @@
 import { Component, Input, ViewChild, ElementRef } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { WindowType } from './window.enum';
 
 @Component({
   selector: 'comp-window',
   templateUrl: './window.component.html',
-  styleUrl: './window.component.css'
+  styleUrl: './window.component.css',
+  imports: [CommonModule]
 })
 
 export class Window {
     title = 'Window';
     @Input() titleBarText = 'My Computer';
+    @Input() type: WindowType = WindowType.STANDARD;
+    WindowType = WindowType;
     
     @ViewChild('windowDiv') windowDiv!: ElementRef;
     
     private isDragging = false;
     private dragOffsetX = 0;
     private dragOffsetY = 0;
+    
+    private static globalZIndex = 1000;
+    zIndex = Window.globalZIndex;
 
     onTitleBarMouseDown(event: MouseEvent): void {
         this.isDragging = true;
         const windowElement = this.windowDiv.nativeElement;
         const rect = windowElement.getBoundingClientRect();
+        
+        // Increment global z-index and apply to this window
+        Window.globalZIndex++;
+        this.zIndex = Window.globalZIndex;
+        windowElement.style.zIndex = this.zIndex.toString();
         
         this.dragOffsetX = event.clientX - rect.left;
         this.dragOffsetY = event.clientY - rect.top;

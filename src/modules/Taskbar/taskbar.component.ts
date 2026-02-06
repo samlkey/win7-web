@@ -1,18 +1,16 @@
 import { Component } from "@angular/core";
+import { CommonModule } from '@angular/common';
 
 @Component({
     selector: 'comp-taskbar',
     templateUrl: './taskbar.component.html',
-    styleUrl: './taskbar.component.css'
+    styleUrl: './taskbar.component.css',
+    imports: [CommonModule]
 })
 
 export class Taskbar {
     currentTime: string = '';
-    openWindows = [
-        { id: 1, title: 'My Computer', icon: '🗁' },
-        { id: 2, title: 'Recycle Bin', icon: '🗑' },
-    ];
-
+    
     constructor() {
         this.updateTime();
         setInterval(() => this.updateTime(), 1000);

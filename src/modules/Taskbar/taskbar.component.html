@@ -1,25 +1,14 @@
-<div class="taskbar-container window glass active" style="border-radius: 0; box-shadow: none;">
+<div class="taskbar-container">
+  <div class="blur-overlay"></div>
   <div class="taskbar-content">
     <div class="taskbar-left">
       <button class="start-button" title="Click to open Windows 7 Start menu">
         <span class="start-icon">⊞</span>
         <span class="start-text">Start</span>
       </button>
-      
-      <div class="taskbar-items">
-        <div class="taskbar-item" *ngFor="let window of openWindows" [title]="window.title">
-          <span class="window-icon">{{ window.icon }}</span>
-          <span class="window-title">{{ window.title }}</span>
-        </div>
-      </div>
     </div>
 
     <div class="taskbar-right">
-      <div class="system-tray">
-        <div class="tray-icon" title="Network">⛓</div>
-        <div class="tray-icon" title="Volume">🔊</div>
-        <div class="tray-icon" title="Power">🔋</div>
-      </div>
       <div class="clock">{{ currentTime }}</div>
     </div>
   </div>

@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "agree": {
+    "win7-web": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/agree",
+            "outputPath": "dist/win7-web",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -59,10 +59,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "agree:build:production"
+              "buildTarget": "win7-web:build:production"
             },
             "development": {
-              "buildTarget": "agree:build:development"
+              "buildTarget": "win7-web:build:development"
             }
           },
           "defaultConfiguration": "development"

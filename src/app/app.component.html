@@ -1,29 +1,22 @@
-<main (contextmenu)="onContextMenu($event)" (click)="hideMenu()">
+<main>  
   <comp-window 
-    [titleBarText]="'Hello World'">
-  
+    [titleBarText]="'Hello World'"
+    [type]="WindowType.STANDARD"
+  >
+
+    <p>Test</p>
+  </comp-window>
+  <comp-window 
+    [titleBarText]="'Hello World'"
+    [type]="WindowType.STANDARD"
+  >
+
+    <p>Test</p>
   </comp-window>
 
-  <comp-taskbar></comp-taskbar>
 
-  <ul role="menu" style="position: fixed; font-size: 13px;" [hidden]="!menuVisible" [style.top.px]="menuY" [style.left.px]="menuX">
-    <li role="menuitem" tabindex="0" aria-haspopup="true">View</li>
-    <li role="menuitem" tabindex="0" aria-haspopup="true">
-      Sort by
-      <ul role="menu">
-        <li role="menuitem"><a href="#menu">Name</a></li>
-        <li role="menuitem"><a href="#menu">Size</a></li>
-        <li role="menuitem"><a href="#menu">Item type</a></li>
-        <li role="menuitem"><a href="#menu">Date modified</a></li>
-    </ul>
-    </li>
-    <li role="menuitem"><a href="#menu">Refresh</a></li>
-    <li role="menuitem"><a href="#menu">Paste</a></li>
-    <li role="menuitem"><a href="#menu">Paste shortcut</a></li>
-    <li role="menuitem"><a href="#menu">Screen resolution</a></li>
-    <li role="menuitem"><a href="#menu">Gadgets</a></li>
-    <li role="menuitem"><a href="#menu">Personalize</a></li>
-  </ul>
+  <comp-taskbar />
+  <comp-contextmenu />
 </main>
 
 

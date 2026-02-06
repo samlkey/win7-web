@@ -6,16 +6,7 @@ main {
     justify-content: center;
     align-items: center;
     background-image: url('/win7-background.jpg');
-    background-size: cover;
+    background-size: contain;
     background-position: center;
     position: relative;
 }
-
-.context-menu {
-    position: fixed;
-}
-
-.context-menu li {
-    cursor: pointer;
-}
-
